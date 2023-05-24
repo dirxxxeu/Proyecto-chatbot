@@ -17,3 +17,4 @@ def llamar_repuestas():
         sheet1=pd.DataFrame(preguntas, columns=preguntas.pop(0))
 
         return sheet1
+print(llamar_repuestas())
