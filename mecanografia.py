@@ -7,7 +7,7 @@ def mecanografia(texto): # funcion para el efecto de mecanografia
     for palabra in lista:
         sys.stdout.write(palabra + " ")
         sys.stdout.flush()
-        time.sleep(0.4)# velocidad en la que realiza la mecanografia
+        time.sleep(0.3)# velocidad en la que realiza la mecanografia
 
 textos =llamar_repuestas()
 
@@ -16,5 +16,8 @@ for x in textos:
     respuestas=x[1]
     if preguntas!='preguntas':
         print(preguntas.capitalize())
+        time.sleep(1)
         mecanografia(respuestas)
         print("\n")
+        time.sleep(1)
+        
