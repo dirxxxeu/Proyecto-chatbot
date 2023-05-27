@@ -19,15 +19,15 @@ color_reset = '\033[0m'
 longitud = 40  # es el total de caracteres por línea de impresion
 relleno = " "  # rellena el texto con espacios en blanco
 
-for x in textos:
-    preguntas = x[0]
-    respuestas = x[1]
 
+# iterar sobre cada línea y separar las preguntas y respuestas
+for index, row in textos.iterrows():
+    preguntas = row['preguntas']
+    respuestas = row['respuestas']
 
-    if preguntas != 'preguntas':
-        print(color_verde + preguntas.rjust(longitud,
-                                            relleno).title() + color_reset)  # alinea el texto a la derecha y capitaliza la primera letra
-        time.sleep(1)
-        mecanografia(respuestas)
-        print("\n")
-        time.sleep(1)
+    print(color_verde + preguntas.rjust(longitud, relleno).title() + color_reset)
+    time.sleep(1)
+    mecanografia(respuestas)
+    print("\n")
+    time.sleep(1)
+

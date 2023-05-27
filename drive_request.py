@@ -18,7 +18,4 @@ def llamar_repuestas():
         preguntas = hoja.get_all_values()
         #aqui generamos el dataframe con pandas
         sheet1=pd.DataFrame(preguntas, columns=preguntas.pop(0))
-
         return sheet1
-
-print(llamar_repuestas())
