@@ -14,13 +14,16 @@ def mecanografia(texto):  # funcion para el efecto de mecanografia
 textos = llamar_repuestas()
 
 for x in textos:
+    color_verde = '\033[92m'
+    color_reset = '\033[0m'
     longitud = 40  # es el total de caracteres por líena de impresion
     relleno = " "  # rellena el texto con espacios en blanco
     preguntas = x[0]
     respuestas = x[1]
 
     if preguntas != 'preguntas':
-        print(preguntas.rjust(longitud, relleno).title())  # alinea el texto a la derecha y capitaliza la primera letra
+        print(color_verde + preguntas.rjust(longitud,
+                                            relleno).title() + color_reset)  # alinea el texto a la derecha y capitaliza la primera letra
         time.sleep(1)
         mecanografia(respuestas)
         print("\n")
