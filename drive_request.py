@@ -13,12 +13,11 @@ sh = gc.open_by_key(data['hoja'])
 #esta funcion genera un dataframe del contenido del excel
 def llamar_repuestas():
         #esto crea una hoja en bruto de excel
-        hoja = sh.get_worksheet(0)
-        #esto no se que hace pero es importante ponerlo
+        hoja = sh.get_worksheet(0) # ESTO INDICA QUE PESTAÑA EN LA HOJA VA A BUSCAR LA INFORMACION
         preguntas = hoja.get_all_values()
         #aqui generamos el dataframe con pandas
-        sheet1=pd.DataFrame(preguntas, columns=preguntas.pop(0))
+        #sheet1=pd.DataFrame(preguntas, columns=preguntas.pop(0))
 
-        return sheet1
+        return preguntas #return sheet1
 
-print(llamar_repuestas())
+
