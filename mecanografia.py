@@ -7,14 +7,9 @@ def mecanografia(texto): # funcion para el efecto de mecanografia
     for palabra in lista:
         sys.stdout.write(palabra + " ")
         sys.stdout.flush()
-        time.sleep(0.3)# velocidad en la que realiza la mecanografia
+        time.sleep(0.15)# velocidad en la que realiza la mecanografia
 
 textos =llamar_repuestas()
-
-color_verde = '\033[92m'
-color_reset = '\033[0m'
-longitud = 40  # es el total de caracteres por línea de impresion
-relleno = " "  # rellena el texto con espacios en blanco
 
 for x in textos:
     color_verde = '\033[92m'
@@ -25,7 +20,6 @@ for x in textos:
     respuestas=x[1]
     if preguntas!='preguntas':
         print(color_verde + preguntas.rjust(longitud,relleno).title() + color_reset)  # alinea el texto a la derecha y capitaliza la primera letra
-        #print(preguntas.capitalize())
         time.sleep(1)
         mecanografia(respuestas.capitalize())
         print("\n")
